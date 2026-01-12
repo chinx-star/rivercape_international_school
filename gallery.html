@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Rivercap International School</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Rivercape_International_School_logo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="subpage-hero">
+    <div class="hero-overlay"></div>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Rivercape_International_School_logo.png" alt="Rivercape International School Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-text" data-aos="zoom-in">
+      <h1>Gallery</h1>
+      <p>Moments that capture the spirit of Rivercap International School</p>
+    </div>
+  </header>
+
+  <!-- GALLERY SECTION -->
+  <section class="section" data-aos="fade-up">
+    <div class="container gallery-grid">
+      <img src="images/gallery/bag.jpeg" alt="Gallery 1" />
+      <img src="images/gallery/bags.jpeg" alt="Gallery 2" />
+      <img src="images/gallery/blue_and_white.jpeg" alt="Gallery 3" />
+      <img src="images/gallery/blue_and_white_1.jpeg" alt="Gallery 4" />
+      <img src="images/gallery/blue_and_white_2.jpeg" alt="Gallery 5" />
+      <img src="images/gallery/girl_in_high_heels.jpeg" alt="Gallery 6" />
+      <img src="images/gallery/girl_in_high_heels_1.jpeg" alt="Gallery 7" />
+      <img src="images/gallery/smart_ecd_girl.jpeg" alt="Gallery 8" />
+      <img src="images/gallery/smart_in_all_levels.jpeg" alt="Gallery 9" />
+      <img src="images/gallery/smart_in_khaki.jpeg" alt="Gallery 10" />
+      <img src="images/gallery/smart_in_khaki_1.jpeg" alt="Gallery 11" />
+      <img src="images/gallery/smart_in_khaki_2.jpeg" alt="Gallery 12" />
+      <img src="images/gallery/smart_in_khaki_3.jpeg" alt="Gallery 13" />
+      <img src="images/gallery/smart_in_khaki_4.jpeg" alt="Gallery 14" />
+      <img src="images/gallery/smart_in_khaki_5.jpeg" alt="Gallery 15" />
+      <img src="images/gallery/smart_in_khaki_6.jpeg" alt="Gallery 16" />
+      <img src="images/gallery/smart_in_khaki_girl.jpeg" alt="Gallery 17" />
+      <img src="images/gallery/smart_in_khaki_girls.jpeg" alt="Gallery 18" />
+      <img src="images/gallery/smart_in_khaki_part_1.jpeg" alt="Gallery 19" />
+      <img src="images/gallery/smart_in_khaki_part_2.jpeg" alt="Gallery 20" />
+      <img src="images/gallery/smart_three.jpeg" alt="Gallery 21" />
+      <img src="images/gallery/track_star.jpeg" alt="Gallery 22" />
+      <img src="images/gallery/track_star_team.jpeg" alt="Gallery 23" />
+      <img src="images/gallery/track_stars.jpeg" alt="Gallery 24" />
+      <img src="images/gallery/winter_wear.jpeg" alt="Gallery 25" />
+      <img src="images/gallery/enjoy_learning.jpeg" alt="Gallery 26" />
+      <img src="images/gallery/looking_sharp.jpeg" alt="Gallery 27" />
+      <img src="images/gallery/looking_sharp_1.jpeg" alt="Gallery 28" />
+      <img src="images/gallery/on_point.jpeg" alt="Gallery 29" />
+      <img src="images/gallery/on_point_1.jpeg" alt="Gallery 30" />
+      <img src="images/gallery/on_point_2.jpeg" alt="Gallery 31" />
+      <img src="images/gallery/smart.jpeg" alt="Gallery 32" />
+      <img src="images/gallery/smart_ecd_boy.jpeg" alt="Gallery 33" />
+      <img src="images/gallery/white_and_blue.jpeg" alt="Gallery 34" />
+      <img src="images/gallery/white_and_blue_1.jpeg" alt="Gallery 35" />
+      <img src="images/sports/ball.jpeg" alt="Gallery 36" />
+      <img src="images/sports/ballers.jpeg" alt="Gallery 37" />
+      <img src="images/sports/ballers_1.jpeg" alt="Gallery 38" />
+      <img src="images/sports/in_tracksuit.jpeg" alt="Gallery 39" />
+      <img src="images/sports/goal_celebration.jpeg" alt="Gallery 40" />
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Rivercap International School. All rights reserved.</p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/263783574030?text=Hello%20Rivercap%20International%20School%2C%20I%20would%20like%20to%20inquire%20about%20enrollment."
+     class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <img src="images/phone-call.png" alt="Chat on WhatsApp" />
+    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    <span class="whatsapp-mobile-label">Contact Us</span>
+  </a>
+
+  <!-- Lightbox container -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Expanded view" id="lightboxImg">
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleryImages = document.querySelectorAll(".gallery-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+
+      galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+    });
+  </script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+  </script>
+</body>
+</html>

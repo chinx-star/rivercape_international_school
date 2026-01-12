@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rivercape International School | Harare, Zimbabwe</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Rivercape_International_School_logo.png" type="image/png" />
+  <!-- AOS Scroll Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- HERO SECTION WITH SLIDESHOW -->
+  <header class="hero">
+    <div class="slideshow-container">
+      <div class="slide fade"><img src="images/administration/the_school.jpeg" alt="Rivercape Building" /></div>
+      <div class="slide fade"><img src="images/background/background.jpeg" alt="Students" /></div>
+      <div class="slide fade"><img src="images/background/background_1.jpeg" alt="Students 1" /></div>
+      <div class="slide fade"><img src="images/background/background_2.jpeg" alt="Student 2" /></div>
+      <div class="slide fade"><img src="images/background/background_3.jpeg" alt="Student 3" /></div>
+      <div class="slide fade"><img src="images/background/background_4.jpeg" alt="Student 4" /></div>
+      <div class="slide fade"><img src="images/background/background_5.jpeg" alt="Student 5" /></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <nav class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Rivercape_International_School_logo.png" alt="Rivercape International School Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#life">School Life</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-text" data-aos="zoom-in">
+      <h1 class="hero-heading">Transforming Individuals Through Quality Education</h1>
+      <p>Empowering learners to grow in knowledge, integrity, and confidence.</p>
+      <a href="enroll.html" class="btn">Enroll Your Child</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-heading">
+        <img src="images/icons/info.png" alt="About Us Icon" />
+        <h2>About Us</h2>
+      </div>
+
+      <p>
+        Rivercape International School, located in Harare, is committed to nurturing excellence,
+        creativity, and discipline through a holistic education that balances academics and character development.
+      </p>
+
+      <!-- ABOUT SLIDESHOW -->
+      <div class="about-slideshow">
+        <div class="about-slide fade">
+          <img src="images/administration/school_fees.jpeg" alt="School Fees">
+        </div>
+        <div class="about-slide fade">
+          <img src="images/administration/school_fees_structure.jpeg" alt="School Fees Structure">
+        </div>
+        <div class="about-slide fade">
+          <img src="images/administration/services_offered.jpeg" alt="Services Offered">
+        </div>
+        <div class="about-slide fade">
+          <img src="images/administration/services_offered_1.jpeg" alt="Services Offered 1">
+        </div>
+        <div class="about-slide fade">
+          <img src="images/administration/services_offered_2.jpeg" alt="Services Offered 2">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="about-prev" onclick="plusAbout(-1)">❮</a>
+        <a class="about-next" onclick="plusAbout(1)">❯</a>
+      </div>
+
+      <!-- Dots -->
+      <div class="about-dots" style="text-align:center; margin-top:15px;">
+        <span class="about-dot" onclick="currentAbout(1)"></span>
+        <span class="about-dot" onclick="currentAbout(2)"></span>
+        <span class="about-dot" onclick="currentAbout(3)"></span>
+        <span class="about-dot" onclick="currentAbout(4)"></span>
+        <span class="about-dot" onclick="currentAbout(5)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section id="academics" class="section light-bg" data-aos="fade-right">
+    <div class="container">
+      <div class="section-heading">
+        <img src="images/icons/board.png" alt="Academics Icon" />
+        <h2>Academics</h2>  
+      </div>
+      
+      <p>
+        We offer structured learning from Early Childhood to A-Level, incorporating both national and international syllabi.
+      </p>
+      <ul class="programs">
+        <li><strong>ECD & Primary:</strong> Foundational learning with creativity and fun.</li>
+        <li><strong>O-Level:</strong> Balanced preparation for academic excellence and personal growth.</li>
+        <li><strong>A-Level:</strong> Leadership and university readiness.</li>
+      </ul>
+    </div>
+  </section>
+
+        <!-- ACADEMICS SLIDESHOW -->
+      <div class="academics-slideshow">
+        <div class="academics-slide fade">
+          <img src="images/academics/classroom.jpeg" alt="Classroom Learning">
+        </div>
+        <div class="academics-slide fade">
+          <img src="images/academics/classroom_1.jpeg" alt="Classroom Learning 1">
+        </div>
+        <div class="academics-slide fade">
+          <img src="images/academics/classroom_2.jpeg" alt="Classroom Learning 2">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="academics-prev" onclick="plusAcademics(-1)">❮</a>
+        <a class="academics-next" onclick="plusAcademics(1)">❯</a>
+      </div>
+
+      <!-- Dots -->
+      <div class="academics-dots" style="text-align:center; margin-top:15px;">
+        <span class="academics-dot" onclick="currentAcademics(1)"></span>
+        <span class="academics-dot" onclick="currentAcademics(2)"></span>
+        <span class="academics-dot" onclick="currentAcademics(3)"></span>
+      </div>
+
+
+  <!-- SCHOOL LIFE -->
+  <section id="life" class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-heading">
+        <img src="images/icons/classroom_2.png" alt="School Life Icon" />
+        <h2>School Life</h2>  
+      </div>
+
+      <p>
+        We believe that learning extends beyond the classroom. Rivercape offers vibrant extracurricular programs that build confidence, teamwork, and creativity.
+      </p>
+      <ul class="activities">
+        <li>Academic & Debate Clubs</li>
+        <li>Sports and Cultural Events</li>
+        <li>Community Service Projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOARDING & ACCOMMODATION SECTION -->
+  <section id="boarding" class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-heading">
+        <img src="images/icons/green-house.png" alt="Boarding Icon" />
+        <h2>Boarding & Accommodation</h2>
+      </div>
+
+      <p>
+        Rivercape International School offers comfortable and secure <strong>boarding house accommodation</strong> for both boys and girls.
+        Our dormitories provide a homely environment designed to support academic focus, personal development, and well-being.
+        Each boarding facility is supervised by experienced house parents, ensuring discipline, safety, and a nurturing community atmosphere.
+      </p>
+
+      <ul class="activities">
+        <li>Modern dormitory facilities with spacious rooms</li>
+        <li>Nutritious and balanced meals prepared daily</li>
+        <li>24-hour supervision by qualified staff</li>
+        <li>Recreation areas for relaxation and social interaction</li>
+        <li>Study rooms and evening prep sessions</li>
+      </ul>
+
+      <!-- BOARDING SLIDESHOW -->
+      <div class="boarding-slideshow">
+        <div class="boarding-slide fade">
+          <img src="images/administration/boarding_room.jpeg" alt="Boarding Room">
+        </div>
+        <div class="boarding-slide fade">
+          <img src="images/administration/boarding_room_1.jpeg" alt="Dining Hall">
+        </div>
+        <div class="boarding-slide fade">
+          <img src="images/administration/boarding_room_2.jpeg" alt="Common Room">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="boarding-prev" onclick="plusBoarding(-1)">❮</a>
+        <a class="boarding-next" onclick="plusBoarding(1)">❯</a>
+      </div>
+
+      <!-- Dots -->
+      <div class="boarding-dots" style="text-align:center; margin-top:15px;">
+        <span class="boarding-dot" onclick="currentBoarding(1)"></span>
+        <span class="boarding-dot" onclick="currentBoarding(2)"></span>
+        <span class="boarding-dot" onclick="currentBoarding(3)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS SECTION -->
+  <section id="events" class="section light-bg" data-aos="fade-up">
+    <div class="container">
+      <h2>Upcoming & Recent Events</h2>
+
+      <div class="events-slideshow">
+        <div class="event-slide fade">
+          <img src="images/sports/football_match.jpeg" alt="Sports Day 2026">
+          <div class="event-caption">
+            <h3>Annual Sports Day</h3>
+            <p>Students showcase their athletic talents and team spirit at our much-anticipated Sports Day.</p>
+          </div>
+        </div>
+
+        <div class="event-slide fade">
+          <img src="images/extracurricular_activities/field_trip2.jpeg" alt="Science Fair">
+          <div class="event-caption">
+            <h3>Science Fair Exhibition</h3>
+            <p>Young innovators present creative projects exploring the wonders of science and technology.</p>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusEvents(-1)">❮</a>
+        <a class="next" onclick="plusEvents(1)">❯</a>
+      </div>
+
+      <!-- Dots -->
+      <div class="dots" style="text-align:center; margin-top:15px;">
+        <span class="dot" onclick="currentEvent(1)"></span>
+        <span class="dot" onclick="currentEvent(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
+    <p>© 2026 Rivercap International School | 
+      <a href="gallery.html" style="color:#fff; text-decoration:underline;">Gallery</a> | 
+      <a href="enroll.html" style="color:#fff; text-decoration:underline;">Enroll</a>
+    </p>
+  </footer>
+
+  <!-- HERO SLIDESHOW SCRIPT -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 5000);
+    }
+  </script>
+
+  <!-- ABOUT SLIDESHOW SCRIPT -->
+  <script>
+    let aboutIndex = 1;
+    showAbout(aboutIndex);
+
+    function plusAbout(n) { showAbout(aboutIndex += n); }
+    function currentAbout(n) { showAbout(aboutIndex = n); }
+
+    function showAbout(n) {
+      let i;
+      const slides = document.getElementsByClassName("about-slide");
+      const dots = document.getElementsByClassName("about-dot");
+      if (n > slides.length) { aboutIndex = 1; }
+      if (n < 1) { aboutIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active-about", ""); }
+      slides[aboutIndex - 1].style.display = "block";
+      dots[aboutIndex - 1].className += " active-about";
+    }
+
+    // Auto slide every 6 seconds
+    setInterval(() => plusAbout(1), 6000);
+  </script>
+  
+    <!-- ACADEMICS SLIDESHOW SCRIPT -->
+  <script>
+    let academicsIndex = 1;
+    showAcademics(academicsIndex);
+
+    function plusAcademics(n) { showAcademics(academicsIndex += n); }
+    function currentAcademics(n) { showAcademics(academicsIndex = n); }
+
+    function showAcademics(n) {
+      let i;
+      const slides = document.getElementsByClassName("academics-slide");
+      const dots = document.getElementsByClassName("academics-dot");
+      if (n > slides.length) { academicsIndex = 1; }
+      if (n < 1) { academicsIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      for (i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active-academics", "");
+      slides[academicsIndex - 1].style.display = "block";
+      dots[academicsIndex - 1].className += " active-academics";
+    }
+
+    // Auto slide every 7 seconds
+    setInterval(() => plusAcademics(1), 7000);
+  </script>
+
+  <!-- EVENTS SLIDESHOW SCRIPT -->
+  <script>
+    let eventIndex = 1;
+    showEvents(eventIndex);
+
+    function plusEvents(n) { showEvents(eventIndex += n); }
+    function currentEvent(n) { showEvents(eventIndex = n); }
+
+    function showEvents(n) {
+      let i;
+      const slides = document.getElementsByClassName("event-slide");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { eventIndex = 1; }
+      if (n < 1) { eventIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active-dot", ""); }
+      slides[eventIndex - 1].style.display = "block";
+      dots[eventIndex - 1].className += " active-dot";
+    }
+
+    // Auto advance slides every 8 seconds
+    setInterval(() => plusEvents(1), 8000);
+  </script>
+  <!-- BOARDING SLIDESHOW SCRIPT -->
+  <script>
+    let boardingIndex = 1;
+    showBoarding(boardingIndex);
+
+    function plusBoarding(n) { showBoarding(boardingIndex += n); }
+    function currentBoarding(n) { showBoarding(boardingIndex = n); }
+
+    function showBoarding(n) {
+      let i;
+      const slides = document.getElementsByClassName("boarding-slide");
+      const dots = document.getElementsByClassName("boarding-dot");
+      if (n > slides.length) { boardingIndex = 1; }
+      if (n < 1) { boardingIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active-boarding", ""); }
+      slides[boardingIndex - 1].style.display = "block";
+      dots[boardingIndex - 1].className += " active-boarding";
+    }
+
+    // Auto slide every 7 seconds
+    setInterval(() => plusBoarding(1), 7000);
+  </script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
+  </script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/263783574030?text=Hello%20Rivercap%20International%20School%2C%20I%20would%20like%20to%20inquire%20about%20enrollment."
+     class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <img src="images/phone-call.png" alt="Chat on WhatsApp" />
+    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    <span class="whatsapp-mobile-label">Contact Us</span>
+  </a>
+</body>
+</html>

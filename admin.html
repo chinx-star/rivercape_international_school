@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Rivercap International School</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Rivercape_International_School_logo.png" type="image/png" />
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <header class="subpage-hero">
+    <div class="hero-overlay"></div>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Rivercape_International_School_logo.png" alt="Rivercape International School Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-text">
+      <h1>Administrator Portal</h1>
+      <p>Manage enrollments and school data securely.</p>
+    </div>
+  </header>
+
+  <!-- ADMIN LOGIN SECTION -->
+  <section class="section light-bg">
+    <div class="container" id="adminContainer">
+      <h2>Administrator Login</h2>
+      <form id="loginForm" class="enroll-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+<br></br>
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <!-- Placeholder for Admin Panel -->
+      <div id="adminPanel" style="display:none;">
+        <h2>Enrollment Records</h2>
+        <p>This is a placeholder area for future data.</p>
+        <table id="enrollTable" class="admin-table">
+          <thead>
+            <tr>
+              <th>Parent Name</th>
+              <th>Child Name</th>
+              <th>Grade</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;">No data yet</td></tr>
+          </tbody>
+        </table>
+        <button id="logoutBtn" class="btn">Logout</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
