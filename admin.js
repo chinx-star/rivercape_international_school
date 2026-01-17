@@ -2,17 +2,15 @@
 const defaultAdmin = { user: "admin", pass: "1234", role: "super" };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize localStorage for admin accounts
+  // Initialize admin accounts
   if (!localStorage.getItem("admins")) {
     localStorage.setItem("admins", JSON.stringify([defaultAdmin]));
   }
 
-  // Get key elements
   const form = document.getElementById("loginForm");
   const panel = document.getElementById("adminPanel");
   const logout = document.getElementById("logoutBtn");
 
-  // ✅ Get username and password fields safely
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
 
@@ -24,9 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
 
-    const found = admins.find(
-      a => a.user === username && a.pass === password
-    );
+    const found = admins.find(a => a.user === username && a.pass === password);
 
     if (found) {
       form.style.display = "none";
@@ -43,9 +39,26 @@ document.addEventListener("DOMContentLoaded", () => {
     form.style.display = "block";
     form.reset();
   });
+
+  // Handle CSV Download
+  document.getElementById("downloadBtn").addEventListener("click", () => {
+    const enrollments = JSON.parse(localStorage.getItem("enrollments") || "[]");
+    if (enrollments.length === 0) return alert("⚠️ No data available to export.");
+
+    const headers = Object.keys(enrollments[0]);
+    const csvRows = [
+      headers.join(","),
+      ...enrollments.map(e => headers.map(h => `"${e[h] || ''}"`).join(","))
+    ];
+    const blob = new Blob([csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "enrollments_export.csv";
+    link.click();
+  });
 });
 
-// Renders enrollment data (if any)
+// ==================== MAIN TABLE RENDER ====================
 function renderEnrollments() {
   const table = document.getElementById("enrollTable");
   const enrollments = JSON.parse(localStorage.getItem("enrollments") || "[]");
@@ -53,51 +66,61 @@ function renderEnrollments() {
   if (enrollments.length === 0) {
     table.innerHTML = `
       <tr>
-        <th>Parent</th><th>Child</th><th>Grade</th><th>Email</th><th>Phone</th>
+        <th>Parent</th><th>Child</th><th>Grade</th><th>Email</th><th>Phone</th><th>Date Applied</th><th>Actions</th>
       </tr>
-      <tr><td colspan="5" style="text-align:center;">No enrollment data found</td></tr>
+      <tr><td colspan="7" style="text-align:center;">No enrollment data found</td></tr>
     `;
     return;
   }
 
   table.innerHTML = `
     <tr>
-      <th>Parent</th><th>Child</th><th>Grade</th><th>Email</th><th>Phone</th>
+      <th>Parent</th>
+      <th>Child</th>
+      <th>Grade</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Date Applied</th>
+      <th>Actions</th>
     </tr>
-    ${enrollments.map(e => `
+    ${enrollments.map((e, i) => `
       <tr>
-        <td>${e.parent}</td>
-        <td>${e.child}</td>
-        <td>${e.grade}</td>
-        <td>${e.email}</td>
-        <td>${e.phone}</td>
+        <td contenteditable="true" class="editable" data-field="parent" data-index="${i}">${e.parent || "—"}</td>
+        <td contenteditable="true" class="editable" data-field="child" data-index="${i}">${e.child || "—"}</td>
+        <td contenteditable="true" class="editable" data-field="grade" data-index="${i}">${e.grade || "—"}</td>
+        <td contenteditable="true" class="editable" data-field="email" data-index="${i}">${e.email || "—"}</td>
+        <td contenteditable="true" class="editable" data-field="phone" data-index="${i}">${e.phone || "—"}</td>
+        <td>${e.date || "—"}</td>
+        <td>
+          <button class="save-btn" data-index="${i}">💾 Save</button>
+          <button class="delete-btn" data-index="${i}">🗑️ Delete</button>
+        </td>
       </tr>
     `).join("")}
   `;
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const csvBtn = document.getElementById("downloadBtn");
 
-  csvBtn.addEventListener("click", () => {
-    const enrollments = JSON.parse(localStorage.getItem("enrollments") || "[]");
-    if (enrollments.length === 0) {
-      alert("⚠️ No data available to export.");
-      return;
-    }
-
-    // ✅ Convert JSON to CSV
-    const headers = Object.keys(enrollments[0]);
-    const csvRows = [
-      headers.join(","), // header row
-      ...enrollments.map(e => headers.map(h => `"${e[h] || ''}"`).join(","))
-    ];
-    const csvData = csvRows.join("\n");
-
-    // ✅ Create and trigger download
-    const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "enrollments_export.csv";
-    link.click();
+  // 🔴 Handle delete
+  document.querySelectorAll(".delete-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const index = e.target.dataset.index;
+      if (confirm("Are you sure you want to delete this record?")) {
+        enrollments.splice(index, 1);
+        localStorage.setItem("enrollments", JSON.stringify(enrollments));
+        renderEnrollments();
+      }
+    });
   });
-});
+
+  // 🟢 Handle save after editing
+  document.querySelectorAll(".save-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const index = e.target.dataset.index;
+      const editedFields = document.querySelectorAll(`[data-index='${index}']`);
+      editedFields.forEach(cell => {
+        enrollments[index][cell.dataset.field] = cell.textContent.trim();
+      });
+      localStorage.setItem("enrollments", JSON.stringify(enrollments));
+      alert("✅ Changes saved successfully!");
+    });
+  });
+}
