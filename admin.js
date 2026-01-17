@@ -75,3 +75,29 @@ function renderEnrollments() {
     `).join("")}
   `;
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const csvBtn = document.getElementById("downloadBtn");
+
+  csvBtn.addEventListener("click", () => {
+    const enrollments = JSON.parse(localStorage.getItem("enrollments") || "[]");
+    if (enrollments.length === 0) {
+      alert("⚠️ No data available to export.");
+      return;
+    }
+
+    // ✅ Convert JSON to CSV
+    const headers = Object.keys(enrollments[0]);
+    const csvRows = [
+      headers.join(","), // header row
+      ...enrollments.map(e => headers.map(h => `"${e[h] || ''}"`).join(","))
+    ];
+    const csvData = csvRows.join("\n");
+
+    // ✅ Create and trigger download
+    const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "enrollments_export.csv";
+    link.click();
+  });
+});

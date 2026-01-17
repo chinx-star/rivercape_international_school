@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel | Rivercap International School</title>
+  <title>Admin Panel | Rivercape International School</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Rivercape_International_School_logo.png" type="image/png" />
   <script defer src="admin.js"></script>
@@ -51,7 +51,7 @@
       <!-- Placeholder for Admin Panel -->
       <div id="adminPanel" style="display:none;">
         <h2>Enrollment Records</h2>
-        <p>This is a placeholder area for future data.</p>
+        
         <table id="enrollTable" class="admin-table">
           <thead>
             <tr>
@@ -60,12 +60,15 @@
               <th>Grade</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>Date Applied</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td colspan="5" style="text-align:center;">No data yet</td></tr>
+            <tr><td colspan="6" style="text-align:center;">No data yet</td></tr>
           </tbody>
         </table>
+        <button id="downloadBtn">⬇️ Download JSON</button>
+         <input type="file" id="uploadInput" accept=".json">
         <button id="logoutBtn" class="btn">Logout</button>
       </div>
     </div>
